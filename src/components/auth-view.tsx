@@ -23,7 +23,7 @@ export default function AuthView() {
     { icon: Calendar, text: "Easy-to-use interface for creating and editing events" },
     { icon: Clock, text: "Customizable calendar views" },
     { icon: Zap, text: "Seamless integration with popular platforms" },
-    { icon: Users, text: "Collaborative tools for team scheduling" },
+    { icon: Users, text: "Share calendar with friends" },
   ]
 
   return (
