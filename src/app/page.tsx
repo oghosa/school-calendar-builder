@@ -1,6 +1,4 @@
-import dynamic from 'next/dynamic'
-
-const AuthView = dynamic(() => import('@/components/auth-view'), { ssr: false })
+import AuthView from '@/components/auth-view'
 
 export default function Home() {
   return (
