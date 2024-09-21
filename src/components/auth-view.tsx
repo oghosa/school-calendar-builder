@@ -1,14 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Calendar, LogIn, UserPlus, School, Clock, Users, Zap } from "lucide-react"
 
-export default function Component() {
+export default function AuthView() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   async function onSubmit(event: React.SyntheticEvent) {
@@ -29,12 +28,7 @@ export default function Component() {
 
   return (
     <div className="flex flex-col lg:flex-row items-start justify-center min-h-screen bg-gradient-to-br from-blue-100 to-indigo-100 p-4">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-md mb-8 lg:mb-0 lg:mr-8"
-      >
+      <div className="w-full max-w-md mb-8 lg:mb-0 lg:mr-8">
         <div className="bg-white p-8 rounded-lg shadow-lg h-full">
           <School className="w-16 h-16 text-indigo-600 mx-auto mb-4" />
           <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">School Calendar Builder</h1>
@@ -43,26 +37,15 @@ export default function Component() {
           </p>
           <div className="space-y-4">
             {features.map((feature, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-center space-x-3"
-              >
+              <div key={index} className="flex items-center space-x-3">
                 <feature.icon className="w-6 h-6 text-indigo-600" />
                 <span className="text-gray-700">{feature.text}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </motion.div>
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="w-full max-w-md"
-      >
+      </div>
+      <div className="w-full max-w-md">
         <div className="bg-white p-8 rounded-lg shadow-lg">
           <Tabs defaultValue="login" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-6">
@@ -183,7 +166,7 @@ export default function Component() {
           and{" "}
           <a href="/privacy" className="text-indigo-600 hover:underline">Privacy Policy</a>.
         </p>
-      </motion.div>
+      </div>
     </div>
   )
 }
